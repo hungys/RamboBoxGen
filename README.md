@@ -1,7 +1,7 @@
 RamboBoxGen
 ===========
 
-RamboBoxGen is an utility to generate Rambo-style Box Score for NBA games, with ANSI color highlighting optimized for [Ptt BBS](https://www.ptt.cc/). This project was still in early stage, and we only test it on Python 3.6.0.
+RamboBoxGen is a utility to generate Rambo-style Box Score for NBA games, with ANSI color highlighting optimized for [Ptt BBS](https://www.ptt.cc/). This project was still in early stage, and we only test it on Python 3.6.0.
 
 # Usage
 
