@@ -3,7 +3,7 @@ BOX_URL_TEMPLATE = "https://neulionmdnyc-a.akamaihd.net/fs/nba/feeds_s2012/stats
 TEAM_DICT = {
     "BOS": "Boston Celtics",
     "BKN": "Brooklyn Nets",
-    "NY": "New York Knicks",
+    "NYK": "New York Knicks",
     "PHI": "Philadelphia 76ers",
     "TOR": "Toronto Raptors",
     "CHI": "Chicago Bulls",
@@ -16,7 +16,7 @@ TEAM_DICT = {
     "MIA": "Miami Heat",
     "ORL": "Orlando Magic",
     "WAS": "Washington Wizards",
-    "GS": "Golden State Warriors",
+    "GSW": "Golden State Warriors",
     "LAC": "LA Clippers",
     "LAL": "Los Angeles Lakers",
     "PHX": "Phoenix Suns",
