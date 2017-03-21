@@ -211,9 +211,9 @@ def get_player_fg(player):
     fgp = player["fgm"] / player["fga"]
     if player["fgm"] == player["fga"]:
         fg = colorize(fg, BoxColors.RED)
-    elif fgp >= 0.6:
+    elif fgp >= 0.67:
         fg = colorize(fg, BoxColors.YELLOW)
-    elif fgp <= 0.25:
+    elif fgp <= 0.33:
         fg = colorize(fg, BoxColors.GREEN)
 
     return fg
@@ -282,7 +282,12 @@ def get_player_ast(player):
     return ast
 
 def get_player_pf(player):
-    return str(player["f"]).rjust(2)
+    pf = str(player["f"]).rjust(2)
+
+    if player["f"] == 6:
+        pf = colorize(pf, BoxColors.GREEN)
+
+    return pf
 
 def get_player_stl(player):
     stl = str(player["s"]).rjust(2)
@@ -296,14 +301,26 @@ def get_player_to(player):
 
     if player["to"] == 0:
         to = colorize(to, BoxColors.RED)
+    elif player["to"] >= 10:
+        to = colorize(to, BoxColors.GREEN)
 
     return to
 
 def get_player_bs(player):
-    return str(player["b"]).rjust(2)
+    bs = str(player["b"]).rjust(2)
+
+    if player["b"] >= 4:
+        bs = colorize(bs, BoxColors.RED)
+
+    return bs
 
 def get_player_ba(player):
-    return str(player["ba"]).rjust(2)
+    ba = str(player["ba"]).rjust(2)
+
+    if player["ba"] >= 4:
+        ba = colorize(ba, BoxColors.GREEN)
+
+    return ba
 
 def get_player_pts(player):
     pts = str(player["p"])
