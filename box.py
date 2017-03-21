@@ -19,17 +19,19 @@ def print_blank_line(count=1):
     print("\n" * count, end='')
 
 def print_box(box):
-    print("      1st   2nd   3rd   4th   FINAL")
+    quarters = ["1st", "2nd", "3rd", "4th"]
+    for i in range(box["score"]["periodTime"]["period"] - 4):
+        quarters.append("OT" + str(i + 1))
+
+    print("      " + "   ".join(quarters) + "   FINAL")
     print_box_team(box, home=False)
     print_box_team(box, home=True)
 
 def print_box_team(box, home=True):
     team = "home" if home else "visitor"
     line = box["score"][team]["id"].ljust(6)
-    for score in box["score"][team]["qScore"]:
-        line += str(score).rjust(3)
-        line += "   "
-    line += " "
+    line += "   ".join(list(map(lambda s: str(s).rjust(3), box["score"][team]["qScore"])))
+    line += "    "
     line += str(box["score"][team]["score"]).rjust(3)
 
     if home:
