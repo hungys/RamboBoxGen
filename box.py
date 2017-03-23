@@ -1,6 +1,7 @@
 import sys
 import time
 import json
+import argparse
 import urllib.request
 from constant import BOX_URL_TEMPLATE, TEAM_DICT, BoxColors
 
@@ -427,12 +428,16 @@ def print_team_box(box, home=True):
     print_bottom_frame(home)
 
 if __name__ == '__main__':
-    if len(sys.argv) < 2:
-        print("Usage: {} [Game ID, e.g. 0021601028]".format(sys.argv[0]))
-        sys.exit()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("game_id", help="Game ID from https://watch.nba.com")
+    parser.add_argument("--bbs", help="Use CTRL-U for ANSI color control", action="store_true")
+    args = parser.parse_args()
+
+    if args.bbs:
+        BoxColors.set_control_code(BoxColors.CTRLU)
 
     try:
-        box_json = download_box_json(sys.argv[1])
+        box_json = download_box_json(args.game_id)
     except:
         print("Error: cannot download the box")
         sys.exit()
