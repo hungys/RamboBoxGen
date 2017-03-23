@@ -152,7 +152,7 @@ def print_total_stats(box, home):
         content = colorize("TOTAL", BoxColors.HOME_HEADER)
     else:
         content = colorize("TOTAL", BoxColors.VISITOR_HEADER)
-    content += "       "
+    content += "        "
     content += " ".join([
         get_team_minutes(team),
         get_team_fg(team),
@@ -350,7 +350,7 @@ def get_player_eff(player):
     return eff
 
 def get_team_minutes(team):
-    return " " + str(team["min"])
+    return str(team["min"]).rjust(3)
 
 def get_team_fg(team):
     return (str(team["fgm"]) + "-" + str(team["fga"])).rjust(6)
