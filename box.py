@@ -13,7 +13,7 @@ def download_box_json(gameid):
     return json.loads(text[15:])
 
 def colorize(content, color):
-    return color + content + BoxColors.END
+    return BoxColors.get_color_code(color) + content + BoxColors.ENDC
 
 def print_blank_line(count=1):
     print("\n" * count, end='')
