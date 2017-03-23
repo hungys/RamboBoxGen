@@ -350,10 +350,10 @@ def get_player_eff(player):
     return eff
 
 def get_team_minutes(team):
-    return " " + str(team["min"]) + " "
+    return " " + str(team["min"])
 
 def get_team_fg(team):
-    return str(team["fgm"]) + "-" + str(team["fga"])
+    return (str(team["fgm"]) + "-" + str(team["fga"])).rjust(6)
 
 def get_team_3pt(team):
     tp = str(team["tm"]) + "-" + str(team["ta"])
