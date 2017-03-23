@@ -186,18 +186,20 @@ def print_total_stats(box, home):
 
 def get_player_name(player, dnp=False):
     name = ""
-    if player["fn"] != "":
+    is_starter = True if player["spos"] != "" else False
+    name_limit = 9 if is_starter else 11
+
+    if player["fn"] != "" and len(player["ln"]) <= name_limit - 2:
         name = player["fn"][0] + "." + player["ln"]
     else:
         name = player["ln"]
 
-    if player["spos"] == "":
-        name = name.ljust(11) if len(name) <= 11 else name[:11]
-        if dnp:
-            name = colorize(name, BoxColors.DARK_GREEN)
-    else:
-        name = name.ljust(9) if len(name) <= 9 else name[:9]
+    name = name.ljust(name_limit) if len(name) <= name_limit else name[:name_limit]
+
+    if is_starter:
         name = colorize(name, BoxColors.WHITE) + " " + player["spos"]
+    elif dnp:
+        name = colorize(name, BoxColors.DARK_GREEN)
 
     return name
 
