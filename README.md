@@ -18,11 +18,11 @@ RamboBoxGen is a utility for generating Rambo-style Box Score for NBA games, wit
     For convenience, you can also pipe the result to clipboard directly,
 
     ```
-    $ python3 box.py 0021601028 -c=ctrlu | pbcopy   # for macOS
-    $ python3 box.py 0021601028 | clip.exe   # for Windows
+    $ python3 box.py 0021601028 -c=ctrlu | pbcopy   # for Welly on macOS
+    $ python3 box.py 0021601028 | clip.exe   # for PCMan on Windows
     ```
 
-    Then paste the result to the BBS.
+    Then, paste the result to the BBS.
 
 # Demo
 
