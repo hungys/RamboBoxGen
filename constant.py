@@ -33,20 +33,6 @@ TEAM_DICT = {
     "UTA": "Utah Jazz"
 }
 
-# class BoxColors:
-#     STATS_HEADER = '\033[1;33;44m'
-#     HOME_FRAME = '\033[1;31m'
-#     HOME_HEADER = '\033[1;33;41m'
-#     VISITOR_FRAME = '\033[1;35m'
-#     VISITOR_HEADER = '\033[1;33;45m'
-#     WHITE = '\033[1;37m'
-#     GREEN = '\033[1;32m'
-#     YELLOW = '\033[1;33m'
-#     CYAN = '\033[1;36m'
-#     RED = '\033[1;31m'
-#     DARK_GREEN = '\033[32m'
-#     END = '\033[0m'
-
 class BoxColors(object):
     CONTROL = '\033'
     ENDC = '\033[0m'
