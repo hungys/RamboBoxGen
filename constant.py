@@ -35,7 +35,7 @@ TEAM_DICT = {
 
 class BoxColors(object):
     CONTROL = '\033'
-    ENDC = '\033[0m'
+    ENDC = '\033[m'
     ESC = '\033'
     CTRLU = '\x15'
 
@@ -51,7 +51,7 @@ class BoxColors(object):
     RED = '[1;31m'
     DARK_GREEN = '[32m'
 
-    END = '[0m'
+    END = '[m'
 
     @classmethod
     def set_control_code(cls, code):

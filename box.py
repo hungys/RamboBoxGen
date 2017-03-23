@@ -432,10 +432,10 @@ def print_team_box(box, home=True):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("game_id", help="Game ID from https://watch.nba.com")
-    parser.add_argument("--bbs", help="Use CTRL-U for ANSI color control", action="store_true")
+    parser.add_argument("-c", "--control", help="ANSI color control code", choices=["esc", "ctrlu"])
     args = parser.parse_args()
 
-    if args.bbs:
+    if args.control == "ctrlu":
         BoxColors.set_control_code(BoxColors.CTRLU)
 
     try:
