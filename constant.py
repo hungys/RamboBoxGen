@@ -1,4 +1,4 @@
-BOX_URL_TEMPLATE = "https://neulionmdnyc-a.akamaihd.net/fs/nba/feeds_s2012/stats/2017/boxscore/%s.js?%d"
+BOX_URL_TEMPLATE = "https://neulionmdnyc-a.akamaihd.net/fs/nba/feeds_s2012/stats/%d/boxscore/%s.js"
 
 TEAM_DICT = {
     "BOS": "Boston Celtics",

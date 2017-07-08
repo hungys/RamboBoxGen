@@ -1,17 +1,24 @@
 import sys
+import datetime
 import time
 import json
 import argparse
 import urllib.request
 from constant import BOX_URL_TEMPLATE, TEAM_DICT, BoxColors
 
-def download_box_json(gameid):
-    url = BOX_URL_TEMPLATE % (gameid, int(time.time() * 1000.0))
+def download_box_json(year, gameid):
+    url = BOX_URL_TEMPLATE % (year, gameid)
+    url = url + "?" + str(int(time.time() * 1000.0))
+
     response = urllib.request.urlopen(url)
     data = response.read()
     text = data.decode("utf-8")
 
     return json.loads(text[15:])
+
+def get_default_season():
+    today = datetime.datetime.now()
+    return today.year if today.month >= 7 else today.year - 1
 
 def colorize(content, color):
     return BoxColors.get_color_code(color) + content + BoxColors.ENDC
@@ -432,14 +439,19 @@ def print_team_box(box, home=True):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("game_id", help="Game ID from https://watch.nba.com")
+    parser.add_argument("-s", "--season", help="For 2016-17 season, use 2016", type=int)
     parser.add_argument("-c", "--control", help="ANSI color control code", choices=["esc", "ctrlu"])
     args = parser.parse_args()
+
+    year = get_default_season()
+    if args.season != None:
+        year = args.season
 
     if args.control == "ctrlu":
         BoxColors.set_control_code(BoxColors.CTRLU)
 
     try:
-        box_json = download_box_json(args.game_id)
+        box_json = download_box_json(year, args.game_id)
     except:
         print("Error: cannot download the box")
         sys.exit()
