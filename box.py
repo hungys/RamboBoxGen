@@ -80,9 +80,9 @@ def print_header_team(box, home):
     team = "home" if home else "visitor"
     line = get_team_name(box["score"][team]["id"])
 
-    if home:
+    if home and "hr" in box["stats"]["home"]:
         line += (" (" + box["stats"]["home"]["hr"] + ")")
-    else:
+    elif "vr" in box["stats"]["visitor"]:
         line += (" (" + box["stats"]["visitor"]["vr"] + ")")
 
     line = line.ljust(34) + "◢███████████████████"
