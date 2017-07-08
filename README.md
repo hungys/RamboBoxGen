@@ -7,11 +7,13 @@ RamboBoxGen is a utility for generating Rambo-style Box Score for NBA games, wit
 
 1. Get game ID from [NBA Official Website](https://watch.nba.com/). You can find it from `masterAttribute.game` attribute located at the source of game page (e.g. [https://watch.nba.com/game/20170318/SACOKC](https://watch.nba.com/game/20170318/SACOKC)).
 
-2. Run `python3 box.py [-h] [-c {esc,ctrlu}] game_id`. For example,
+2. Run `python3 box.py [-h] [-s season] [-c {esc,ctrlu}] game_id`. For example,
 
     ```
-    $ python3 box.py 0021601028
+    $ python3 box.py -s 2016 0021601028
     ```
+
+    The default value of argument `season` is set based on today's date. For 2016-17 season, please use 2016. July 1st is regarded as the start of the new season.
 
     Optional argument `-c=ctrlu` will replace ANSI control code `ESC` with `CTRL-U`. For Nally and Welly on macOS, we recommend you to set this option.
 
