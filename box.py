@@ -296,7 +296,7 @@ def get_player_ast(player):
 def get_player_pf(player):
     pf = str(player["f"]).rjust(2)
 
-    if player["f"] == 6:
+    if player["f"] >= 6:
         pf = colorize(pf, BoxColors.GREEN)
 
     return pf
