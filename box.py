@@ -124,7 +124,7 @@ def print_player_stats(box, home):
             content = get_player_name(player, True)
             content += " "
             content += (" " + colorize("DNP", BoxColors.DARK_GREEN) + " ")
-            content = content.ljust(92)
+            content = content.ljust(90)
             print_with_side_frame(content, home)
             continue
 
@@ -204,7 +204,7 @@ def get_player_name(player, dnp=False):
     name = name.ljust(name_limit) if len(name) <= name_limit else name[:name_limit]
 
     if is_starter:
-        name = colorize(name, BoxColors.WHITE) + " " + player["spos"]
+        name = colorize(name, BoxColors.WHITE) + " " + player["spos"][-1]
     elif dnp:
         name = colorize(name, BoxColors.DARK_GREEN)
 
