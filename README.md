@@ -5,7 +5,7 @@ RamboBoxGen is a utility for generating Rambo-style Box Score for NBA games, wit
 
 # Usage
 
-1. Get game ID from [NBA Official Website](https://watch.nba.com/). You can find it from `masterAttribute.game` attribute located at the source of game page (e.g. [https://watch.nba.com/game/20170318/SACOKC](https://watch.nba.com/game/20170318/SACOKC)).
+1. Get game ID from [NBA Advanced Stats](http://stats.nba.com/scores/). You can find it from the URL of the box score page (e.g. [http://stats.nba.com/game/0021601028/](http://stats.nba.com/game/0021601028/)).
 
 2. Run `python3 box.py [-h] [-s season] [-c {esc,ctrlu}] game_id`. For example,
 
